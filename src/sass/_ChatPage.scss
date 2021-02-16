@@ -1,0 +1,22 @@
+.chat-page {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    /* background-image: url("https://www.ppt-backgrounds.net/uploads/hd-light-pink--pixelstalk-net-image-image.jpeg"); ; */
+    background-image: linear-gradient(
+        109.6deg,
+        rgba(62, 161, 219, 1) 11.2%,
+        rgba(93, 52, 236, 1) 100.2%
+    );
+}
+.chat-body {
+    display: flex;
+    // background-color: rgba(255, 255, 255, 0.589);
+    background: rgba(255, 255, 255, 0.158);
+    backdrop-filter: blur(3px);
+    height: 90vh;
+    width: 85vw;
+    box-shadow: -1px 4px 12px -6px rgba(0, 0, 0, 0.7);
+    overflow-x: visible;
+    border-radius: 5px;
+}

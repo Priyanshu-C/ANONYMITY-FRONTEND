@@ -1,0 +1,250 @@
+
+.nav-test{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+nav {
+ 
+ position: relative;
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(90deg, #d1d1d1 0.7%, #e5e5e5 19.8%, #ffffff 100%),
+    #c4c4c4;
+  padding: 0 2%;
+  font-size: 3rem;
+}
+nav .logo {
+  display: flex;
+  float: left;
+  flex: 1;
+  width: 20%;
+
+  align-items: center;
+  color: #00acff;
+  & img {
+    width: 7rem;
+  }
+}
+
+nav .links {
+  float: right;
+
+  display: flex;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 30%;
+  justify-content: space-around;
+  align-items: center;
+
+  letter-spacing: -1px;
+
+  & li {
+    list-style: none;
+
+    & a {
+      display: block;
+      text-decoration: none;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      color: #00acff;
+      font-size: 2rem;
+      line-height: 3.7rem;
+      font-weight: bold;
+    }
+  }
+}
+
+#nav-toggle {
+  position: absolute;
+  top: -10rem;
+}
+
+nav .icon-burger {
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  & .line {
+    width: 19px;
+    height: 2.5px;
+    background-color: #00acff;
+    margin: 3px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+
+//main
+
+.main-container {
+  height: 70vh;
+  background-color: #dedede;
+}
+
+.logoname-container {
+  background-color: rgb(209, 209, 209);
+  width: 50%;
+  height: 100%;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+
+  display: flex;
+ 
+  align-items: center;
+
+
+  & .logo-big-poly1 {
+   margin-left: 30%;
+    position: relative;
+    width: 40%;
+    min-width: 120px;
+    max-width:150px;
+    height: 40%;
+  
+    padding: 10px;
+    
+    & .img-1 {
+      position: absolute;
+      display: block;
+      
+      animation: logoEffectLeft 1s ease-out;
+      width: 100%;
+      z-index: 5;
+      // transition: all 1s;
+    }
+    & .img-2 {
+      position: absolute;
+      z-index: 6;
+      top: -35%;
+      width: 100%;
+      animation: logoEffectRight 1s ease-out;
+      height: 100%;
+      // transition: all 1s;
+      
+    }
+    // &:hover .img-1{
+    //   transform: rotate(360deg);
+    // }
+    // &:hover .img-2{
+    //   transform: rotate(-360deg);
+    // }
+  }
+  & .logo-big-poly2 {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35px;
+    & img {
+      width: 70%;
+      height: 70%;
+    }
+  }
+}
+
+@keyframes navToggle{
+  from {
+    //  transform: translateY(-20px);
+     opacity: 0;
+  }
+  to{
+    //  transform: translateY(0px);
+     opacity: 1;
+  }
+}
+@keyframes logoEffectLeft{
+  0%{
+     transform: rotate(200deg) scale(1.5) ;
+     
+     opacity: 0;
+  }
+  // 50%{
+   
+  //  transform: rotate(100deg)
+  // }
+  100%{
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+}
+@keyframes logoEffectRight{
+  0%{
+    transform: rotate(-200deg) scale(1.5) ;
+    
+    opacity: 0;
+ }
+//  50%{
+ 
+//    transform: rotate(-100deg) 
+//  }
+ 100%{
+   transform: rotate(0deg) scale(1);
+   opacity: 1;
+ }
+
+}
+//media queries
+@media screen and (max-width: 768px) {
+  .main-container {
+    height: 50vh;
+    
+  }
+  .logoname-container .logo-big-poly1{
+    margin-left: 25%;
+  }
+  nav .logo {
+    float: none;
+    width: auto;
+    justify-content: center;
+  }
+  nav .links {
+    // display: none;
+    float: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 7rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: auto;
+    height: 0vh;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.4s ease-in-out;
+
+    & a {
+      font-size: 2rem;
+    }
+  }
+
+  nav :checked {
+    & ~ .links {
+      height: 80vh;
+    }
+    & ~ .icon-burger .line:nth-child(1) {
+      transform: translateY(5.5px) rotate(225deg);
+    }
+    & ~ .icon-burger .line:nth-child(3) {
+      transform: translateY(-5.5px) rotate(-225deg);
+    }
+    & ~ .icon-burger .line:nth-child(2) {
+      opacity: 0;
+    }
+  }
+  nav .icon-burger {
+    display: block;
+  }
+}

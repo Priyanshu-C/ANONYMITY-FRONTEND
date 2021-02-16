@@ -1,0 +1,52 @@
+.button {
+    background-color: #008cba; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 300;
+    width: 95%;
+    border-radius: 9px;
+    text-transform: uppercase;
+    background-image: -webkit-linear-gradient(45deg, #00ACFF 0%,  #038cd1 100%);    
+    background-image: linear-gradient(45deg, #00ACFF 0%, #038cd1 100%);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* backface-visibility: hidden; */
+    box-shadow: 0 1px 10px rgba( black, 0.2);
+    position: relative;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(black, 0.2);
+      &::after {
+        transform: scaleX(1.2) scaleY(1.3);
+        opacity: 0;
+      }
+    }
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    &::after {
+      content: "";
+      background-color:#00ACFF ;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 9px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.8s;
+    }
+  }
+  .button:disabled {
+    opacity: 0.5;
+  }
+  
