@@ -5,16 +5,13 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(
-        109.6deg,
-        rgba(62, 161, 219, 1) 11.2%,
-        rgba(93, 52, 236, 1) 100.2%
-    );
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
     &__header {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 10rem;
+        font-size: 8rem;
         color: black;
         font-family: "Poiret One";
         user-select: none;
@@ -25,7 +22,7 @@
             rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
         display: flex;
         justify-content: center;
-        background-color: white;
+        background: linear-gradient(83.04deg, #5d5d5e 2.12%, #000000 93.99%);
         flex-wrap: wrap;
         width: 50vh;
         height: 40vh;
@@ -39,22 +36,23 @@
             user-select: none;
         }
         &__header h1 {
-            border-bottom: 2px black solid;
+            border-bottom: 2px white solid;
             font-family: "Ubuntu";
-            font-size: 5rem;
-            color: rgb(49, 49, 49);
+            font-size: 3rem;
+            color: #407dda;
             user-select: none;
             font-weight: 200;
         }
         &__header p {
             margin-top: 1rem;
             font-family: "Ubuntu";
-            font-size: 2rem;
-            color: rgb(7, 40, 77);
+            font-size: 1.5rem;
+            color: white;
             user-select: none;
         }
         &__button {
-            font-size: 3rem;
+            color: white;
+            font-size: 2rem;
         }
     }
 }

@@ -1,10 +1,14 @@
-import { useEffect } from "react";
+//Essentials
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Welcome from "../Welcome/Welcome";
 import ChatScreen from "../ChatScreen/ChatScreen";
 
 //redux imports
 import { connect } from "react-redux";
 import { logIn, logOut, setUser, setUserAvatarName } from "../../actions";
+import LandingPage from "../LandingPage/LandingPage";
 
 function App({
     loggedIn,
@@ -32,7 +36,14 @@ function App({
         // <Router>
         <div className="app">
             <div className="app_body">
-                {loggedIn ? <ChatScreen /> : <Welcome />}
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={LandingPage} />
+                        <Route exact path="/main">
+                            {loggedIn ? <ChatScreen /> : <Welcome />}
+                        </Route>
+                    </Switch>
+                </BrowserRouter>
             </div>
         </div>
 

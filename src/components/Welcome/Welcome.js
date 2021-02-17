@@ -43,27 +43,23 @@ function Welcome({
                 </div>
                 <div className="WelcomeContainer__login__button">
                     {userData ? (
-                        <Button
-                            variant="outlined"
-                            style={{
-                                fontSize: "3rem",
-                            }}
+                        <button
                             onClick={() => {
                                 logIn();
                             }}
+                            style={{ width: "14rem", fontSize: "1.5rem" }}
+                            className="welcome-container__LetsGo-button"
                         >
-                            Get In
-                        </Button>
+                            Let's Get In
+                        </button>
                     ) : (
-                        <Button
-                            variant="outlined"
-                            style={{
-                                fontSize: "3rem",
-                            }}
+                        <button
                             onClick={assignId}
+                            style={{ width: "14rem", fontSize: "1.5rem" }}
+                            className="welcome-container__LetsGo-button"
                         >
                             Get Started
-                        </Button>
+                        </button>
                     )}
                 </div>
             </div>
